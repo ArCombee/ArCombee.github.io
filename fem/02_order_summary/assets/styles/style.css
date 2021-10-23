@@ -1,0 +1,159 @@
+:root {
+  --color-primary-blue-100: hsl(225, 100%, 94%);
+  --color-primary-blue-200: hsl(245, 75%, 52%);
+  --color-neutral-blue-100: hsl(228, 100%, 98%);
+  --color-neutral-blue-200: rgb(114, 128, 167);
+  --color-neutral-blue-300: rgb(31, 47, 86);
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Red Hat Display", sans-serif;
+  background: url("../images/pattern-background-mobile.svg") no-repeat;
+  background-size: 640px 194px;
+  background-position: center top;
+  background-color: var(--color-primary-blue-100);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary-blue-200);
+}
+
+.card {
+  width: 20.4375rem;
+  height: 35.4375rem;
+  background-color: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 40px 40px -20px rgba(13, 48, 189, 15.18%);
+}
+.card__header {
+  text-align: center;
+  margin: 2rem 2rem 1.5rem;
+}
+.card__hero-image {
+  width: 100%;
+}
+.card__title {
+  margin-bottom: 1rem;
+  color: var(--color-neutral-blue-300);
+  font-size: 1.375rem;
+  font-weight: 900;
+}
+.card__body {
+  color: var(--color-neutral-blue-200);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.price__box {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem;
+  padding: 1rem;
+  font-size: 0.875rem;
+  background-color: var(--color-neutral-blue-100);
+  border-radius: 0.6875rem;
+}
+.price__plan {
+  margin-left: 1.25rem;
+  margin-right: auto;
+}
+.plan__title {
+  color: var(--color-neutral-blue-300);
+  font-weight: 900;
+}
+.plan__price {
+  color: var(--color-neutral-blue-200);
+  font-weight: 500;
+}
+.price__change {
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+.order__box {
+  margin: 0 1.5rem;
+}
+.btn {
+  display: block;
+  width: 100%;
+  color: var(--color-neutral-blue-200);
+  background: transparent;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  border: none;
+  text-align: center;
+}
+.btn:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.btn--full {
+  padding: 0.9375rem 0;
+  color: #fff;
+  background-color: var(--color-primary-blue-200);
+
+  border-radius: 0.6875rem;
+  box-shadow: 0 20px 20px 0 rgba(56, 42, 225, 19%);
+}
+@media screen and (min-width: 40rem) {
+  body {
+    background: url("../images/pattern-background-desktop.svg") no-repeat;
+    background-size: 100%;
+    background-position: left -10vh;
+    background-color: var(--color-primary-blue-100);
+  }
+  .card {
+    width: 28.125rem;
+    height: 43.5625rem;
+  }
+  .card__header {
+    margin: 3rem 3rem 1.5rem;
+  }
+  .card__title {
+    font-size: 1.75rem;
+  }
+  .card__body {
+    font-size: 1rem;
+  }
+  .price__box {
+    margin: 0 3rem 2rem;
+    padding: 1.5625rem 1.5rem;
+    font-size: 1rem;
+  }
+  .order__box {
+    margin: auto 3rem;
+  }
+  .price__change:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: #756af1;
+  }
+  .btn,
+  .price__change {
+    transition: all 100ms ease-in-out;
+  }
+  .btn:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  .btn--full:hover {
+    cursor: pointer;
+    background-color: #756af1;
+  }
+  .btn--outline:hover {
+    cursor: pointer;
+    color: #1f2e55;
+  }
+}
