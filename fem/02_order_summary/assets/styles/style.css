@@ -27,7 +27,8 @@ body {
   min-height: 100vh;
 }
 
-a {
+a:link,
+a:visited {
   color: var(--color-primary-blue-200);
 }
 
@@ -136,7 +137,7 @@ a {
   .order__box {
     margin: auto 3rem;
   }
-  .price__change:hover {
+  .price__change:active {
     cursor: pointer;
     text-decoration: none;
     color: #756af1;
@@ -148,11 +149,11 @@ a {
   .btn:not(:last-child) {
     margin-bottom: 2rem;
   }
-  .btn--full:hover {
+  .btn--full:active {
     cursor: pointer;
     background-color: #756af1;
   }
-  .btn--outline:hover {
+  .btn--outline:active {
     cursor: pointer;
     color: #1f2e55;
   }
