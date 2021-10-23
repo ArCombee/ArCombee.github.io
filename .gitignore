@@ -1,0 +1,6 @@
+#PATHS
+node_modules
+
+#FILES
+*.zip
+*.7z
