@@ -15,27 +15,33 @@
     <title>FEM Challenge | Profile Card Component</title>
   </head>
   <body>
-    <main class="card">
-      <div class="profile">
-        <img src="assets/images/bg-pattern-card.svg" alt="Background" class="profile__background" />
-        <img class="profile__photo" src="assets/images/image-victor.jpg" alt="Photo of Victor Crest" />
-        <h1 class="profile__person">Victor Crest <span class="profile__age">26</span></h1>
-        <div class="profile__location">London</div>
-      </div>
-      <div class="stats">
-        <div class="stats__followers">80K <span class="stats__label">Followers</span></div>
-        <div class="stats__likes">803K <span class="stats__label">Likes</span></div>
-        <div class="stats__photos">1.4K <span class="stats__label">Photos</span></div>
-      </div>
-    </main>
+    <div class="container">
+      <article class="card">
+        <div class="top">&nbsp;</div>
+        <div class="profile">
+          <img class="profile__photo" src="assets/images/image-victor.jpg" alt="Profile photo of Victor Crest" />
+          <h1 class="profile__person">Victor Crest <span class="profile__age">26</span></h1>
+          <p class="profile__location">London</p>
+        </div>
+        <div class="stats">
+          <ul class="stats__list">
+            <li class="stats__item">80K <span class="stats__label">Followers</span></li>
+            <li class="stats__item">803K <span class="stats__label">Likes</span></li>
+            <li class="stats__item">1.4K <span class="stats__label">Photos</span></li>
+          </ul>
+        </div>
+      </article>
+    </div>
     <footer class="footer">
-      <p class="footer__coder">
-        challenge on
-        <a href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ" target="_blank"
-          >Frontend Mentor</a
-        >
-        | coded by <a href="https://arjencombee.nl"><span class="footer__author">Arjen Combee</span></a
-        >.
+      <p class="footer__body">
+        This sollution is created by
+        <a class="footer__link" href="https://arjencombee.nl/fem/01_profile_card/"> Arjen Combee </a>
+      </p>
+      <p class="footer__body">
+        Challenge on
+        <a class="footer__link" href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ">
+          frontendmentor.io
+        </a>
       </p>
     </footer>
   </body>
