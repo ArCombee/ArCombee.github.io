@@ -19,26 +19,40 @@
     <title>FEM Challenge | Order Summary Component</title>
   </head>
   <body>
-    <main class="card">
-      <img class="card__hero-image" src="assets/images/illustration-hero.svg" alt="" />
-      <header class="card__header">
-        <h1 class="card__title">Order Summary</h1>
-        <p class="card__body">
-          You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
-        </p>
-      </header>
-      <div class="price__box">
-        <img class="price__icon" src="assets/images/icon-music.svg" alt="Music Icon" />
-        <div class="price__plan">
-          <div class="plan__title">Annual Plan</div>
-          <div class="plan__price">$59.99/year</div>
+    <div class="container">
+      <article class="card">
+        <div class="card__top-image">&nbsp;</div>
+        <div class="card__header-box">
+          <h1 class="card__title">Order Summary</h1>
+          <p class="card__body">
+            You can now listen to millions of songs, audiobooks, and podcasts on any device anywhere you like!
+          </p>
         </div>
-        <a href="#" class="price__change">Change</a>
-      </div>
-      <div class="order__box">
-        <button class="btn btn--full">Proceed to Payment</button>
-        <button class="btn btn--outline">Cancel Order</button>
-      </div>
-    </main>
+        <div class="card__price-box">
+          <img class="price__icon" src="assets/images/icon-music.svg" alt="Music Icon" />
+          <div class="subscription__container">
+            <div class="subscription__title">Annual Plan</div>
+            <div class="subscription__price">$59.99/year</div>
+          </div>
+          <button class="subscription__change-btn">Change</button>
+        </div>
+        <div class="cta-box">
+          <a href="#" class="btn btn--full">Proceed to Payment</a>
+          <a href="#" class="btn btn--outline">Cancel Order</a>
+        </div>
+      </article>
+    </div>
+    <footer class="footer">
+      <p class="footer__body">
+        This sollution is created by
+        <a class="footer__link" href="https://arjencombee.nl/fem/02_order_summary/"> Arjen Combee </a>
+      </p>
+      <p class="footer__body">
+        Challenge on
+        <a class="footer__link" href="https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj">
+          frontendmentor.io
+        </a>
+      </p>
+    </footer>
   </body>
 </html>

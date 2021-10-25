@@ -17,6 +17,7 @@ html {
 }
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: "Red Hat Display", sans-serif;
@@ -26,26 +27,24 @@ body {
   background-color: var(--color-primary-blue-100);
   min-height: 100vh;
 }
-
-a:link,
-a:visited {
-  color: var(--color-primary-blue-200);
-}
-
 .card {
-  width: 20.4375rem;
-  height: 35.4375rem;
+  display: grid;
+  grid-template-columns: 20.4375rem;
+  grid-template-rows: 10rem repeat(3, min-content);
+  min-width: 0.4375rem;
   background-color: #fff;
   border-radius: 1.25rem;
   overflow: hidden;
   box-shadow: 0 40px 40px -20px rgba(13, 48, 189, 15.18%);
 }
-.card__header {
-  text-align: center;
-  margin: 2rem 2rem 1.5rem;
+.card__top-image {
+  background-image: url("../images/illustration-hero.svg");
+  background-size: cover;
 }
-.card__hero-image {
-  width: 100%;
+.card__header-box {
+  margin: 2rem 0 0;
+  padding: 0 2rem;
+  text-align: center;
 }
 .card__title {
   margin-bottom: 1rem;
@@ -59,7 +58,7 @@ a:visited {
   font-weight: 500;
   line-height: 1.6;
 }
-.price__box {
+.card__price-box {
   display: flex;
   align-items: center;
   margin: 1.5rem;
@@ -68,47 +67,52 @@ a:visited {
   background-color: var(--color-neutral-blue-100);
   border-radius: 0.6875rem;
 }
-.price__plan {
+.subscription__container {
   margin-left: 1.25rem;
   margin-right: auto;
 }
-.plan__title {
+.subscription__title {
   color: var(--color-neutral-blue-300);
   font-weight: 900;
 }
-.plan__price {
+.subscription__price {
   color: var(--color-neutral-blue-200);
   font-weight: 500;
 }
-.price__change {
-  font-size: 0.8125rem;
-  font-weight: 700;
-}
-.order__box {
-  margin: 0 1.5rem;
-}
-.btn {
-  display: block;
-  width: 100%;
-  color: var(--color-neutral-blue-200);
+.subscription__change-btn {
   background: transparent;
   font-family: inherit;
+  color: var(--color-primary-blue-200);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-decoration: underline;
+  border: none;
+}
+.cta-box {
+  margin: 0 1.5rem;
+}
+.btn:link,
+.btn:visited {
+  display: block;
+  width: 100%;
+  padding: 0.9375rem 4rem;
   font-size: 0.9375rem;
   font-weight: 700;
-  border: none;
   text-align: center;
+  text-decoration: none;
 }
-.btn:not(:last-child) {
-  margin-bottom: 1.5rem;
+.btn--outline {
+  color: var(--color-neutral-blue-200);
+  margin-bottom: 1.0625rem;
 }
 .btn--full {
-  padding: 0.9375rem 0;
   color: #fff;
   background-color: var(--color-primary-blue-200);
-
+  box-shadow: 0 20px 20px 0 rgba(56, 42, 225, 15%);
   border-radius: 0.6875rem;
-  box-shadow: 0 20px 20px 0 rgba(56, 42, 225, 19%);
+  margin-bottom: 0.5625rem;
 }
+
 @media screen and (min-width: 40rem) {
   body {
     background: url("../images/pattern-background-desktop.svg") no-repeat;
@@ -117,44 +121,76 @@ a:visited {
     background-color: var(--color-primary-blue-100);
   }
   .card {
-    width: 28.125rem;
-    height: 43.5625rem;
+    grid-template-columns: 28.125rem;
+    grid-template-rows: 13.75rem repeat(3, min-content);
   }
-  .card__header {
-    margin: 3rem 3rem 1.5rem;
+  .card__header-box {
+    margin: 2.8125rem 0 1.25rem;
+    padding: 0 3rem;
+    text-align: center;
   }
   .card__title {
+    margin-bottom: 1rem;
     font-size: 1.75rem;
   }
   .card__body {
     font-size: 1rem;
   }
-  .price__box {
+  .card__price-box {
+    display: flex;
+    align-items: center;
     margin: 0 3rem 2rem;
-    padding: 1.5625rem 1.5rem;
+    padding: 1.5625rem;
     font-size: 1rem;
   }
-  .order__box {
-    margin: auto 3rem;
-  }
-  .price__change:active {
-    cursor: pointer;
-    text-decoration: none;
-    color: #756af1;
-  }
-  .btn,
-  .price__change {
+  .btn {
     transition: all 100ms ease-in-out;
   }
-  .btn:not(:last-child) {
-    margin-bottom: 2rem;
+  .subscription__container {
+    margin-left: 1.25rem;
+    margin-right: auto;
+    line-height: 1.6;
   }
+  .subscription__change-btn {
+    font-size: 0.875rem;
+    transition: all 100ms ease-in-out;
+  }
+  .subscription__change-btn:hover,
+  .subscription__change-btn:focus {
+    cursor: pointer;
+    color: #766cf1;
+    text-decoration: none;
+  }
+  .subscription__change-btn:active,
+  .btn--outline:active,
   .btn--full:active {
-    cursor: pointer;
-    background-color: #756af1;
+    transform: translateY(3px);
   }
-  .btn--outline:active {
-    cursor: pointer;
-    color: #1f2e55;
+  .cta-box {
+    margin: 0 3rem;
   }
+  .btn--outline {
+    margin-bottom: 2.0625rem;
+  }
+  .btn--full {
+    margin-bottom: 1rem;
+  }
+  .btn--full:hover,
+  .btn--full:focus {
+    cursor: pointer;
+    background-color: #766cf1;
+  }
+}
+.footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 0.25rem 0;
+  text-align: center;
+}
+.footer__body {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
 }
