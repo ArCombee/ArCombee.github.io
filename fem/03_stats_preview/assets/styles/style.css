@@ -115,7 +115,7 @@ body {
 .footer__body a {
   color: var(--color-p-accent);
 }
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 70rem) {
   .container {
     max-width: 69.375rem;
   }
