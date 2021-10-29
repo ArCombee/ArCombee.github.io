@@ -21,73 +21,81 @@ html {
   padding: 0;
 }
 body {
+  display: grid;
+  grid-template-rows: 1fr min-content;
   min-width: 20.4375rem;
-  font-family: var(--font-normal);
-  font-size: 0.9375rem; /* 15px */
+  min-height: 100vh;
   background-color: var(--color-n-gray-100);
-  line-height: 1.667;
+  font-family: var(--font-normal);
+  font-size: 0.9375rem;
+  line-height: 1;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 .cards {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 20.4375rem;
-  grid-auto-rows: min-content;
-  margin: 2rem 0;
+  max-width: 20.4375rem;
 }
 .card {
   padding: 3rem;
-  border-radius: 0.5rem;
   overflow: hidden;
+}
+.card__type {
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+.card__body {
+  margin: 1.8rem 0 1.6rem 0;
+  color: var(--color-n-white-100);
+  font-size: 0.9375rem;
+  line-height: 1.667;
 }
 .card__icon {
   width: 4rem;
   height: 2.5rem;
   margin-bottom: 2.1875rem;
 }
-.card__type {
-  line-height: 1;
-  color: var(--color-n-gray-100);
-  font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.card__body {
-  color: var(--color-n-white-100);
-  margin: 1.5625rem 0;
-}
 .card--sedans {
   background-color: var(--color-p-organge-100);
-  padding-bottom: 3.6rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 .card--suvs {
   background-color: var(--color-p-cyan-100);
-  transform: translateY(-0.6rem);
-  padding-bottom: 3.6rem;
 }
 .card--luxury {
   background-color: var(--color-p-cyan-700);
-  transform: translateY(-1.2rem);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 .btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
-  padding: 0.75rem 1.96875rem;
+  padding: 0.9rem 1.96875rem;
   background-color: var(--color-n-gray-100);
+  border: 2px solid var(--color-n-gray-100);
   border-radius: 100rem;
   text-decoration: none;
-  border: 2px solid transparent;
-  transition: all 100ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
-.btn:hover {
-  background-color: hsla(0, 0%, 95%, 0.8);
-}
+.btn:hover,
 .btn:active,
 .btn:focus {
+  cursor: pointer;
   color: #fff;
   background-color: transparent;
-  border: 2px solid #fff;
+  outline: none;
+}
+.btn:active {
+  transform: translateY(2px);
 }
 .btn--sedans {
   color: var(--color-p-organge-100);
@@ -99,50 +107,51 @@ body {
   color: var(--color-p-cyan-700);
 }
 .footer {
-  position: relative;
-  display: block;
-  width: 100%;
-  color: hsl(179, 100%, 43%);
-  background-color: hsl(179, 100%, 23%);
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem 0;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  color: #fff;
+  background-color: var(--color-p-cyan-700);
 }
-.footer__body {
-  display: block;
-}
-.footer__link {
+.footer__link,
+.footer__link:link,
+.footer__link:visited {
   color: var(--color-p-organge-100);
+  font-weight: 700;
   text-decoration: none;
 }
+.footer__link:hover,
+.footer__link:active,
+.footer__link:focus {
+  border-bottom: 3px solid var(--color-p-organge-100);
+  outline: none;
+}
+
 @media screen and (min-width: 70rem) {
   .cards {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 19.75rem) 19.25rem;
-    grid-template-rows: min-content;
-    margin: 0;
-  }
-  .card {
-    transform: translate(0);
-    padding-bottom: 3rem;
+    display: flex;
+    max-width: 57.5rem;
   }
   .card__body {
-    padding-bottom: 3.65rem;
+    margin-bottom: 5.1875rem;
   }
-  .card--suvs {
-    transform: translateX(-0.6rem);
+  .card--sedans {
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0;
   }
   .card--luxury {
-    transform: translateX(-1.2rem);
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
   .footer {
-    position: fixed;
-    bottom: 0;
-  }
-  .footer__body {
-    display: inline-block;
+    flex-direction: row;
+    gap: 0 1rem;
+    padding: 0.75rem 0;
   }
 }
